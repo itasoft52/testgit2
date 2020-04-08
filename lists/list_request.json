@@ -8,11 +8,6 @@
     "checkboxPosition": "left",
     "columns": [
         {
-            "id": "column_0",
-            "label": "ID",
-            "name": "id"
-        },
-        {
             "id": "column_1",
             "label": "Name",
             "name": "name"
@@ -23,6 +18,7 @@
             "name": "remarks"
         }
     ],
+    "considerFilterWhenGetTotal": "",
     "filters": [],
     "id": "list_request",
     "name": "List - Form Request",
