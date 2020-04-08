@@ -79,7 +79,7 @@
         "footerMessage": "Powered by Joget",
         "id": "v",
         "logoutText": "Logout",
-        "name": "Test Git 2",
+        "name": "Sample App",
         "welcomeMessage": "#date.EEE, d MMM yyyy#"
     },
     "setting": {"properties": {
