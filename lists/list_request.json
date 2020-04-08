@@ -16,10 +16,26 @@
             "id": "column_2",
             "label": "Remarks",
             "name": "remarks"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "id": "column_0",
+            "label": "Request Date",
+            "name": "date",
+            "sortable": "false"
         }
     ],
     "considerFilterWhenGetTotal": "",
-    "filters": [],
+    "filters": [{
+        "id": "filter_0",
+        "label": "Name",
+        "name": "name",
+        "type": {
+            "className": "org.joget.apps.datalist.lib.TextFieldDataListFilterType",
+            "properties": {}
+        }
+    }],
     "id": "list_request",
     "name": "List - Form Request",
     "order": "",
