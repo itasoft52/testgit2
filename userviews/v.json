@@ -104,7 +104,7 @@
                 "fontColor": "WHITE",
                 "homeAttractBanner": "",
                 "homeUrl": "",
-                "horizontal_menu": "true",
+                "horizontal_menu": "horizontal_inline",
                 "inbox": "",
                 "js": "",
                 "loginPageBottom": "",
