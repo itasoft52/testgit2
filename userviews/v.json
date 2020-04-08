@@ -83,24 +83,48 @@
         "welcomeMessage": "#date.EEE, d MMM yyyy#"
     },
     "setting": {"properties": {
-        "mobileCacheEnabled": "",
-        "mobileViewDisabled": "",
+        "hideThisUserviewInAppCenter": "",
         "permission": {
             "className": "",
             "properties": {}
         },
+        "tempDisablePermissionChecking": "",
         "theme": {
             "className": "org.joget.plugin.enterprise.ProgressiveTheme",
             "properties": {
                 "accentColor": "BLUE",
                 "buttonColor": "ORANGE",
                 "buttonTextColor": "WHITE",
+                "css": "",
+                "disableHelpGuide": "",
+                "disablePush": "",
+                "disablePwa": "",
+                "enableResponsiveSwitch": "",
+                "fav_icon": "",
                 "fontColor": "WHITE",
+                "homeAttractBanner": "",
+                "homeUrl": "",
+                "horizontal_menu": "true",
+                "inbox": "",
+                "js": "",
+                "loginPageBottom": "",
+                "loginPageTop": "",
+                "logo": "",
                 "menuFontColor": "BLACK",
                 "primaryColor": "INDIGO",
-                "themeScheme": "light"
+                "profile": "",
+                "removeAssignmentTitle": "",
+                "shortcut": [],
+                "shortcutLinkLabel": "",
+                "subfooter": "",
+                "subheader": "",
+                "themeScheme": "light",
+                "urlsToCache": "",
+                "userImage": "",
+                "userMenu": []
             }
         },
-        "userviewDescription": ""
+        "userviewDescription": "",
+        "userview_thumbnail": ""
     }}
 }
