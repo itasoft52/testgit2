@@ -83,7 +83,7 @@
                         "fileType": "",
                         "fileTypeMsg": "Invalid file type",
                         "id": "attachment",
-                        "label": "Attachment",
+                        "label": "Attachment (File)",
                         "maxSize": "",
                         "maxSizeMsg": "File size limit exceeded",
                         "multiple": "",
