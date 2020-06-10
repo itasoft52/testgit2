@@ -1,6 +1,6 @@
 <appDefinition>
    <id>testGit2</id>
-   <version>1</version>
+   <version></version>
    <name>Sample App</name>
    <packageDefinitionList/>
    <formDefinitionList/>
