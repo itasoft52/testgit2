@@ -58,6 +58,7 @@
                   <processDefId>request_approver_process</processDefId>
                   <activityDefId>email_on_received</activityDefId>
                   <pluginName>com.smm.training.formatter.GetNextAssignmentId</pluginName>
+                  <pluginProperties>{}</pluginProperties>
                </packageActivityPlugin>
             </entry>
             <entry>
