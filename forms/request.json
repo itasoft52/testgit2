@@ -189,7 +189,7 @@
                         "submit-label-normal": "",
                         "submit-label-readonly": "",
                         "uniqueKey": "",
-                        "validateMaxRow": "3",
+                        "validateMaxRow": "",
                         "validateMinRow": "1",
                         "validator": {
                             "className": "",
