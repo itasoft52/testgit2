@@ -53,6 +53,14 @@
                </packageActivityPlugin>
             </entry>
             <entry>
+               <string>request_approver_process::email_on_received</string>
+               <packageActivityPlugin>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>email_on_received</activityDefId>
+                  <pluginName>com.smm.training.formatter.GetNextAssignmentId</pluginName>
+               </packageActivityPlugin>
+            </entry>
+            <entry>
                <string>request_approver_process::approval</string>
                <packageActivityPlugin>
                   <processDefId>request_approver_process</processDefId>
