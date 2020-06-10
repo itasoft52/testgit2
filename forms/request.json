@@ -137,40 +137,65 @@
             "elements": [{
                 "className": "org.joget.apps.form.model.Column",
                 "elements": [{
-                    "className": "org.joget.apps.form.lib.Grid",
+                    "className": "org.joget.plugin.enterprise.ListGrid",
                     "properties": {
+                        "abortRelatedRunningProcesses": "",
+                        "buttonLabel": "",
+                        "deleteFiles": "",
+                        "deleteGridData": "",
+                        "deleteMessage": "Delete row?",
+                        "deleteSubformData": "",
+                        "disabledAdd": "",
+                        "disabledDelete": "",
+                        "enableSorting": "",
                         "errorMessage": "Invalid number of rows",
-                        "id": "item",
-                        "label": "",
+                        "formDefId": "",
+                        "height": "500",
+                        "id": "field5",
+                        "label": "List Grid",
+                        "listId": "user",
                         "loadBinder": {
                             "className": "",
                             "properties": {}
                         },
                         "options": [
                             {
-                                "label": "Item Name",
-                                "value": "item_name"
+                                "editable": "no",
+                                "format": "",
+                                "formatType": "text",
+                                "label": "Id",
+                                "value": "id",
+                                "width": ""
                             },
                             {
-                                "label": "Quantity",
-                                "value": "quantity"
-                            },
-                            {
-                                "label": "Price",
-                                "value": "price"
+                                "editable": "no",
+                                "format": "",
+                                "formatType": "text",
+                                "label": "First name",
+                                "value": "firstName",
+                                "width": ""
                             }
                         ],
+                        "pageSize": "20",
                         "readonly": "",
+                        "readonlyLabel": "",
+                        "requestParams": [],
+                        "showRowNumber": "",
+                        "sortField": "sort",
                         "storeBinder": {
                             "className": "",
                             "properties": {}
                         },
-                        "validateMaxRow": "",
-                        "validateMinRow": "",
+                        "submit-label-normal": "",
+                        "submit-label-readonly": "",
+                        "uniqueKey": "",
+                        "validateMaxRow": "3",
+                        "validateMinRow": "1",
                         "validator": {
                             "className": "",
                             "properties": {}
-                        }
+                        },
+                        "width": "900"
                     }
                 }],
                 "properties": {"width": "100%"}
