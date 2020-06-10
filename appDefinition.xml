@@ -44,15 +44,6 @@
          </packageActivityFormMap>
          <packageActivityPluginMap>
             <entry>
-               <string>request_approver_process::email_on_received</string>
-               <packageActivityPlugin>
-                  <processDefId>request_approver_process</processDefId>
-                  <activityDefId>email_on_received</activityDefId>
-                  <pluginName>org.joget.apps.app.lib.EmailTool</pluginName>
-                  <pluginProperties>{     &quot;host&quot;: &quot;&quot;,     &quot;port&quot;: &quot;&quot;,     &quot;security&quot;: &quot;&quot;,     &quot;username&quot;: &quot;&quot;,     &quot;password&quot;: &quot;&quot;,     &quot;from&quot;: &quot;&quot;,     &quot;toSpecific&quot;: &quot;&quot;,     &quot;toParticipantId&quot;: &quot;request_applicant&quot;,     &quot;cc&quot;: &quot;&quot;,     &quot;subject&quot;: &quot;Your Application Has Been Received&quot;,     &quot;message&quot;: &quot;Hi #performer.runProcess.firstName# #performer.runProcess.lastName#,\n\nYour application has been received on #date.dd\/MM\/yyyy hh:mm a#.\n\n==  This is a system generated message. == &quot;,     &quot;isHtml&quot;: &quot;true&quot;,     &quot;formDefId&quot;: &quot;&quot;,     &quot;fields&quot;: [],     &quot;files&quot;: [] }</pluginProperties>
-               </packageActivityPlugin>
-            </entry>
-            <entry>
                <string>request_approver_process::route1</string>
                <packageActivityPlugin>
                   <processDefId>request_approver_process</processDefId>
