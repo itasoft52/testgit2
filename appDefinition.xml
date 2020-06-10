@@ -2,7 +2,133 @@
    <id>testGit2</id>
    <version></version>
    <name>Sample App</name>
-   <packageDefinitionList/>
+   <packageDefinitionList>
+      <packageDefinition>
+         <appId>testGit2</appId>
+         <id>testGit2</id>
+         <name>Sample App</name>
+         <packageActivityFormMap>
+            <entry>
+               <string>request_approver_process::approval</string>
+               <packageActivityForm>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>approval</activityDefId>
+                  <formId>request</formId>
+                  <type>SINGLE</type>
+                  <autoContinue>false</autoContinue>
+                  <disableSaveAsDraft>false</disableSaveAsDraft>
+               </packageActivityForm>
+            </entry>
+            <entry>
+               <string>request_approver_process::clarification</string>
+               <packageActivityForm>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>clarification</activityDefId>
+                  <formId>request</formId>
+                  <type>SINGLE</type>
+                  <autoContinue>false</autoContinue>
+                  <disableSaveAsDraft>false</disableSaveAsDraft>
+               </packageActivityForm>
+            </entry>
+            <entry>
+               <string>request_approver_process::runProcess</string>
+               <packageActivityForm>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>runProcess</activityDefId>
+                  <formId>request</formId>
+                  <type>SINGLE</type>
+                  <autoContinue>false</autoContinue>
+                  <disableSaveAsDraft>false</disableSaveAsDraft>
+               </packageActivityForm>
+            </entry>
+         </packageActivityFormMap>
+         <packageActivityPluginMap>
+            <entry>
+               <string>request_approver_process::email_on_received</string>
+               <packageActivityPlugin>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>email_on_received</activityDefId>
+                  <pluginName>org.joget.apps.app.lib.EmailTool</pluginName>
+                  <pluginProperties>{     &quot;host&quot;: &quot;&quot;,     &quot;port&quot;: &quot;&quot;,     &quot;security&quot;: &quot;&quot;,     &quot;username&quot;: &quot;&quot;,     &quot;password&quot;: &quot;&quot;,     &quot;from&quot;: &quot;&quot;,     &quot;toSpecific&quot;: &quot;&quot;,     &quot;toParticipantId&quot;: &quot;request_applicant&quot;,     &quot;cc&quot;: &quot;&quot;,     &quot;subject&quot;: &quot;Your Application Has Been Received&quot;,     &quot;message&quot;: &quot;Hi #performer.runProcess.firstName# #performer.runProcess.lastName#,\n\nYour application has been received on #date.dd\/MM\/yyyy hh:mm a#.\n\n==  This is a system generated message. == &quot;,     &quot;isHtml&quot;: &quot;true&quot;,     &quot;formDefId&quot;: &quot;&quot;,     &quot;fields&quot;: [],     &quot;files&quot;: [] }</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+            <entry>
+               <string>request_approver_process::route1</string>
+               <packageActivityPlugin>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>route1</activityDefId>
+                  <pluginName>org.joget.apps.app.lib.RulesDecisionPlugin</pluginName>
+                  <pluginProperties>{     &quot;rules&quot;: {         &quot;ifrules&quot;: [{             &quot;revert&quot;: false,             &quot;andOr&quot;: &quot;and&quot;,             &quot;conditions&quot;: [{                 &quot;revert&quot;: false,                 &quot;variable&quot;: &quot;status&quot;,                 &quot;operation&quot;: &quot;==&quot;,                 &quot;value&quot;: &quot;Approved&quot;             }],             &quot;actions&quot;: [{                 &quot;type&quot;: &quot;transition&quot;,                 &quot;name&quot;: &quot;transition6&quot;,                 &quot;value&quot;: &quot;&quot;             }]         }],         &quot;else&quot;: [{             &quot;type&quot;: &quot;transition&quot;,             &quot;name&quot;: &quot;transition7&quot;,             &quot;value&quot;: &quot;&quot;         }]     } }</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+            <entry>
+               <string>request_approver_process::approval</string>
+               <packageActivityPlugin>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>approval</activityDefId>
+                  <pluginName>org.joget.process.AssignmentFormActions</pluginName>
+                  <pluginProperties>{     &quot;readonly&quot;: &quot;true&quot;,     &quot;readonlyLabel&quot;: &quot;true&quot;,     &quot;enableClarification&quot;: &quot;true&quot;,     &quot;clarificationActivityDefId&quot;: &quot;clarification&quot;,     &quot;enableReassignment&quot;: &quot;true&quot;,     &quot;optionsBinder&quot;: {         &quot;className&quot;: &quot;org.joget.plugin.enterprise.UserOptionsBinder&quot;,         &quot;properties&quot;: {             &quot;orgId&quot;: &quot;&quot;,             &quot;deptId&quot;: &quot;&quot;,             &quot;groupId&quot;: &quot;&quot;,             &quot;addEmptyOption&quot;: &quot;&quot;,             &quot;emptyLabel&quot;: &quot;&quot;,             &quot;optionLabel&quot;: &quot;&quot;,             &quot;grouping&quot;: &quot;&quot;,             &quot;useAjax&quot;: &quot;&quot;,             &quot;cacheInterval&quot;: &quot;&quot;,             &quot;cacheIdlePause&quot;: &quot;120&quot;         }     },     &quot;enableWithdrawal&quot;: &quot;&quot;,     &quot;enableApproval&quot;: &quot;true&quot;,     &quot;multiApproval&quot;: &quot;&quot;,     &quot;enableComments&quot;: &quot;true&quot;,     &quot;showActivityName&quot;: &quot;true&quot;,     &quot;noOfComments&quot;: &quot;5&quot;,     &quot;disabledAddNewComments&quot;: &quot;&quot;,     &quot;enableProcessStatus&quot;: &quot;true&quot;,     &quot;showProcessName&quot;: &quot;&quot;,     &quot;showFutureActivities&quot;: &quot;true&quot;,     &quot;showSkippedActivities&quot;: &quot;&quot;,     &quot;usernameFormat&quot;: &quot;name&quot;,     &quot;processTable&quot;: &quot;{appId}_pd&quot;,     &quot;updateStatus&quot;: &quot;true&quot;,     &quot;workflowVariable&quot;: &quot;status&quot;,     &quot;parentFieldId&quot;: &quot;status&quot;,     &quot;statusValue&quot;: [{         &quot;status&quot;: &quot;Approved&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Rejected&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Clarification&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Reassignment&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Withdrawal&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Completed&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }] }</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+            <entry>
+               <string>request_approver_process::clarification</string>
+               <packageActivityPlugin>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>clarification</activityDefId>
+                  <pluginName>org.joget.process.AssignmentFormActions</pluginName>
+                  <pluginProperties>{     &quot;readonly&quot;: &quot;&quot;,     &quot;enableClarification&quot;: &quot;&quot;,     &quot;enableReassignment&quot;: &quot;&quot;,     &quot;enableWithdrawal&quot;: &quot;&quot;,     &quot;enableApproval&quot;: &quot;&quot;,     &quot;multiApproval&quot;: &quot;&quot;,     &quot;enableComments&quot;: &quot;true&quot;,     &quot;showActivityName&quot;: &quot;true&quot;,     &quot;noOfComments&quot;: &quot;5&quot;,     &quot;disabledAddNewComments&quot;: &quot;&quot;,     &quot;enableProcessStatus&quot;: &quot;true&quot;,     &quot;showProcessName&quot;: &quot;&quot;,     &quot;showFutureActivities&quot;: &quot;true&quot;,     &quot;showSkippedActivities&quot;: &quot;&quot;,     &quot;usernameFormat&quot;: &quot;name&quot;,     &quot;processTable&quot;: &quot;{appId}_pd&quot;,     &quot;updateStatus&quot;: &quot;true&quot;,     &quot;workflowVariable&quot;: &quot;status&quot;,     &quot;parentFieldId&quot;: &quot;status&quot;,     &quot;statusValue&quot;: [{         &quot;status&quot;: &quot;Approved&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Rejected&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Clarification&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Reassignment&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Withdrawal&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }, {         &quot;status&quot;: &quot;Completed&quot;,         &quot;customValue&quot;: &quot;&quot;,         &quot;customLabel&quot;: &quot;&quot;     }] }</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+            <entry>
+               <string>request_approver_process::email_on_approved</string>
+               <packageActivityPlugin>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>email_on_approved</activityDefId>
+                  <pluginName>org.joget.apps.app.lib.EmailTool</pluginName>
+                  <pluginProperties>{     &quot;host&quot;: &quot;&quot;,     &quot;port&quot;: &quot;&quot;,     &quot;security&quot;: &quot;&quot;,     &quot;username&quot;: &quot;&quot;,     &quot;password&quot;: &quot;&quot;,     &quot;from&quot;: &quot;&quot;,     &quot;toSpecific&quot;: &quot;&quot;,     &quot;toParticipantId&quot;: &quot;request_applicant&quot;,     &quot;cc&quot;: &quot;&quot;,     &quot;subject&quot;: &quot;Your Application Has Been Approved&quot;,     &quot;message&quot;: &quot;Hi #performer.runProcess.firstName# #performer.runProcess.lastName#,\n\nYour application has been approved on #date.dd\/MM\/yyyy hh:mm a#.\n\n==  This is a system generated message. == &quot;,     &quot;isHtml&quot;: &quot;true&quot;,     &quot;formDefId&quot;: &quot;&quot;,     &quot;fields&quot;: [],     &quot;files&quot;: [] }</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+            <entry>
+               <string>request_approver_process::email_on_rejected</string>
+               <packageActivityPlugin>
+                  <processDefId>request_approver_process</processDefId>
+                  <activityDefId>email_on_rejected</activityDefId>
+                  <pluginName>org.joget.apps.app.lib.EmailTool</pluginName>
+                  <pluginProperties>{     &quot;host&quot;: &quot;&quot;,     &quot;port&quot;: &quot;&quot;,     &quot;security&quot;: &quot;&quot;,     &quot;username&quot;: &quot;&quot;,     &quot;password&quot;: &quot;&quot;,     &quot;from&quot;: &quot;&quot;,     &quot;toSpecific&quot;: &quot;&quot;,     &quot;toParticipantId&quot;: &quot;request_applicant&quot;,     &quot;cc&quot;: &quot;&quot;,     &quot;subject&quot;: &quot;Your Application Has Been Rejected&quot;,     &quot;message&quot;: &quot;Hi #performer.runProcess.firstName# #performer.runProcess.lastName#,\n\nYour application has been rejected on #date.dd\/MM\/yyyy hh:mm a#.\n\n==  This is a system generated message. == &quot;,     &quot;isHtml&quot;: &quot;true&quot;,     &quot;formDefId&quot;: &quot;&quot;,     &quot;fields&quot;: [],     &quot;files&quot;: [] }</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+         </packageActivityPluginMap>
+         <packageParticipantMap>
+            <entry>
+               <string>request_approver_process::processStartWhiteList</string>
+               <packageParticipant>
+                  <processDefId>request_approver_process</processDefId>
+                  <participantId>processStartWhiteList</participantId>
+                  <type>role</type>
+                  <value>adminUser</value>
+               </packageParticipant>
+            </entry>
+            <entry>
+               <string>request_approver_process::request_applicant</string>
+               <packageParticipant>
+                  <processDefId>request_approver_process</processDefId>
+                  <participantId>request_applicant</participantId>
+                  <type>requester</type>
+                  <value>runProcess</value>
+               </packageParticipant>
+            </entry>
+            <entry>
+               <string>request_approver_process::request_approver</string>
+               <packageParticipant>
+                  <processDefId>request_approver_process</processDefId>
+                  <participantId>request_approver</participantId>
+                  <type>requesterHod</type>
+                  <value>runProcess</value>
+               </packageParticipant>
+            </entry>
+         </packageParticipantMap>
+      </packageDefinition>
+   </packageDefinitionList>
    <formDefinitionList/>
    <userviewDefinitionList/>
    <datalistDefinitionList/>
